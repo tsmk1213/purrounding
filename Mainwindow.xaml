@@ -1,0 +1,30 @@
+﻿<Window x:Class="audio_button.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:audio_button"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        Background = "Transparent"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <MediaElement x:Name="mediaMain" Margin="10,10,10,65"
+                      LoadedBehavior="Manual"
+                      UnloadedBehavior="Stop"
+                      MediaEnded="MediaMain_MediaEnded"
+                      MediaFailed="MediaMain_MediaFailed" />
+
+        <Canvas x:Name="MainCanvas">
+            <Image x:Name="MainImage" Width="120" Height="120" Source="C:\Users\kshn0\Desktop\audio button\audio button\image_file\player.png" Margin="-30,0,0,0"/>
+            <Rectangle x:Name="ClickableArea1" Width="12" Height="10" Fill="Transparent" Stroke="Transparent" MouseLeftButtonDown="ClickableArea1_Start"/>
+            <Rectangle x:Name="ClickableArea2" Width="12" Height="10" Fill="Transparent" Stroke="Transparent" MouseLeftButtonDown="ClickableArea2_Pause"/>
+            <Rectangle x:Name="ClickableArea3" Width="12" Height="10" Fill="Transparent" Stroke="Transparent" MouseLeftButtonDown="ClickableArea3_Stop"/>
+            <Rectangle x:Name="ClickableArea4" Width="12" Height="10" Fill="Transparent" Stroke="Transparent" MouseLeftButtonDown="ClickableArea4_Skip"/>
+        </Canvas>
+
+        <Image Width="50" Height="50" Source="C:\Users\kshn0\Desktop\audio button\audio button\image_file\cassette.png" Margin="100,0,0,0" MouseLeftButtonDown="Music_Start"></Image>
+    </Grid>
+</Window>
